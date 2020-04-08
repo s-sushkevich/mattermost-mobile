@@ -146,7 +146,8 @@ Client4.doFetchWithResponse = async (url, options) => {
     });
 };
 
-const isSslRelaxed = async () => {
+// Move this elsewhere? Utils?
+export const isSslRelaxed = async () => {
     const serverUrl = Client4.getUrl();
     const sslWhitelist = await AsyncStorage.getItem(Ssl.SSL_WHITELIST);
 

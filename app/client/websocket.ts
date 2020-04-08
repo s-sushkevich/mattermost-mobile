@@ -2,6 +2,8 @@
 // See LICENSE.txt for license information.
 
 import {Platform} from 'react-native';
+import {isSslRelaxed} from 'app/init/fetch';
+import {emptyFunction} from 'app/utils/general';
 
 const MAX_WEBSOCKET_FAILS = 7;
 const MIN_WEBSOCKET_RETRY_TIME = 3000; // 3 sec
@@ -87,7 +89,12 @@ class WebSocketClient {
                 return;
             }
 
-            this.conn = new WebSocket(connectionUrl, [], {headers: {origin}, ...(additionalOptions || {})});
+            const options = {headers: {origin}, ...(additionalOptions || {})};
+            if (isSslRelaxed()) {
+                options.headers.trusty = true;
+            }
+
+            this.conn = new WebSocket(connectionUrl, [], options);
             this.connectionUrl = connectionUrl;
             this.token = token;
 
