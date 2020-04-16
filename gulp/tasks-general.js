@@ -14,3 +14,9 @@ exports.customColors = gulp.task('customColors', () => {
 
     return gulp.src(paths.customColorsSrc(customBuildName)).pipe(gulp.dest(paths.colorsDest, {overwrite: true}));
 });
+
+exports.customStrings = gulp.task('customStrings', () => {
+    const customBuildName = argv.custom;
+
+    return gulp.src(paths.customStringsSrc(customBuildName)).pipe(gulp.dest(paths.customStringsDest, {overwrite: true}));
+});
