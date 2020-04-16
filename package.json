@@ -21,6 +21,7 @@
     "emoji-regex": "8.0.0",
     "form-data": "3.0.0",
     "fuse.js": "5.0.10-beta",
+    "gulp": "4.0.2",
     "intl": "1.2.5",
     "jail-monkey": "2.3.2",
     "mime-db": "1.43.0",
