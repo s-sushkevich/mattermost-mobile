@@ -7,6 +7,8 @@ const paths = {
     colorsDest: './app/constants',
     customStringsSrc: (name) => `./app/custom/${name}/localeStrings/*`,
     customStringsDest: './assets/override/i18n',
+    customImagesSrc: (name) => `./app/custom/${name}/images/*`,
+    customImagesDest: './assets/override/images',
 };
 
 module.exports = {

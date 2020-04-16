@@ -20,3 +20,9 @@ exports.customStrings = gulp.task('customStrings', () => {
 
     return gulp.src(paths.customStringsSrc(customBuildName)).pipe(gulp.dest(paths.customStringsDest, {overwrite: true}));
 });
+
+exports.customImages = gulp.task('customImages', () => {
+    const customBuildName = argv.custom;
+
+    return gulp.src(paths.customImagesSrc(customBuildName)).pipe(gulp.dest(paths.customImagesDest, {overwrite: true}));
+});
