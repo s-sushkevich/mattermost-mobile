@@ -5,10 +5,12 @@ const paths = {
     defaultColorsSrc: './app/default/constants/colorThemes.js',
     customColorsSrc: (name) => `./app/custom/${name}/constants/colorThemes.js`,
     colorsDest: './app/constants',
-    customStringsSrc: (name) => `./app/custom/${name}/localeStrings/*`,
-    customStringsDest: './assets/override/i18n',
-    customImagesSrc: (name) => `./app/custom/${name}/images/*`,
-    customImagesDest: './assets/override/images',
+    defaultStringsSrc: './app/default/localeStrings',
+    customStringsSrc: (name) => `./app/custom/${name}/localeStrings`,
+    stringsDest: './assets/override/i18n',
+    customImagesSrc: (name) => `./app/custom/${name}/images`,
+    defaultImagesSrc: './app/default/images',
+    imagesDest: './assets/override/images',
 };
 
 module.exports = {

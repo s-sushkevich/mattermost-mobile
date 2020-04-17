@@ -3,6 +3,7 @@
 
 const gulp = require('gulp');
 const argv = require('yargs').argv;
+const fs = require('fs');
 const {paths} = require('./gulp-paths');
 
 exports.defaultColors = gulp.task('defaultColors', () => {
@@ -17,12 +18,14 @@ exports.customColors = gulp.task('customColors', () => {
 
 exports.customStrings = gulp.task('customStrings', () => {
     const customBuildName = argv.custom;
+    const pathSrc = fs.existsSync(paths.customStringsSrc(customBuildName)) ? `${paths.customStringsSrc(customBuildName)}/*` : `${paths.defaultStringsSrc}/*`;
 
-    return gulp.src(paths.customStringsSrc(customBuildName)).pipe(gulp.dest(paths.customStringsDest, {overwrite: true}));
+    return gulp.src(pathSrc).pipe(gulp.dest(paths.stringsDest, {overwrite: true}));
 });
 
 exports.customImages = gulp.task('customImages', () => {
     const customBuildName = argv.custom;
+    const pathSrc = fs.existsSync(paths.customImagesSrc(customBuildName)) ? `${paths.customImagesSrc(customBuildName)}/*` : `${paths.defaultImagesSrc}/**/*`;
 
-    return gulp.src(paths.customImagesSrc(customBuildName)).pipe(gulp.dest(paths.customImagesDest, {overwrite: true}));
+    return gulp.src(pathSrc).pipe(gulp.dest(paths.imagesDest, {overwrite: true}));
 });

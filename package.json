@@ -148,6 +148,7 @@
   },
   "scripts": {
     "start": "node ./node_modules/react-native/local-cli/cli.js start",
+    "gulp:victra": "yarn gulp custom --custom victra",
     "check": "eslint --ignore-path .gitignore --ignore-pattern node_modules --quiet . && npm run tsc",
     "fix": "eslint --ignore-path .gitignore --ignore-pattern node_modules --quiet . --fix",
     "postinstall": "make post-install",

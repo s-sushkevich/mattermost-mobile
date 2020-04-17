@@ -25,7 +25,7 @@ require('./tasks-general');
 /*** Main series ***/
 gulp.task('default', gulp.series('defaultColors'));
 
-gulp.task('custom', gulp.series('customColors', 'customStrings'));
+gulp.task('custom', gulp.series('customColors', 'customStrings', 'customImages'));
 
 // /*******************/
 //
