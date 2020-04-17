@@ -12,6 +12,8 @@ const customTasksToRun = [
     'overrideReleaseAssets',
     'customSplashIos',
     'customSplashAndroid',
+    'customAppIconIos',
+    'customAppIconAndroid',
     'customAppEnvVariables',
 ];
 

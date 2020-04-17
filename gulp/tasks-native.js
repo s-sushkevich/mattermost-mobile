@@ -44,3 +44,24 @@ exports.customSplashAndroid = gulp.task('customSplashAndroid', (callback) => {
     return callback();
 });
 
+exports.customAppIconIos = gulp.task('customAppIconIos', (callback) => {
+    const customBuildName = argv.custom;
+    const iconsSrc = paths.customAppIconIosSrc(customBuildName);
+
+    if (fs.existsSync(iconsSrc)) {
+        return gulp.src(`${iconsSrc}/*`).pipe(gulp.dest(paths.customAppIconIosDest, {overwrite: true}));
+    }
+
+    return callback();
+});
+
+exports.customAppIconAndroid = gulp.task('customAppIconAndroid', (callback) => {
+    const customBuildName = argv.custom;
+    const iconsSrc = paths.customAppIconAndroidSrc(customBuildName);
+
+    if (fs.existsSync(iconsSrc)) {
+        return gulp.src(`${iconsSrc}/**/*`).pipe(gulp.dest(paths.customAppIconAndroidDest, {overwrite: true}));
+    }
+
+    return callback();
+});

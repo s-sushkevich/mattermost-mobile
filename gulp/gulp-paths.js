@@ -17,6 +17,10 @@ const paths = {
     customSplashIosDest: './assets/override/release/splash_screen/ios',
     customSplashAndroidSrc: (name) => `./app/custom/${name}/nativeAssets/splash_screen/android`,
     customSplashAndroidDest: './assets/override/release/splash_screen/android',
+    customAppIconIosSrc: (name) => `./app/custom/${name}/nativeAssets/icons/ios`,
+    customAppIconIosDest: './assets/override/release/icons/ios',
+    customAppIconAndroidSrc: (name) => `./app/custom/${name}/nativeAssets/icons/android`,
+    customAppIconAndroidDest: './assets/override/release/icons/android',
 };
 
 module.exports = {
