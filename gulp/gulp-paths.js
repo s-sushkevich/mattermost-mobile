@@ -5,12 +5,16 @@ const paths = {
     defaultColorsSrc: './app/default/constants/colorThemes.js',
     customColorsSrc: (name) => `./app/custom/${name}/constants/colorThemes.js`,
     colorsDest: './app/constants',
-    defaultStringsSrc: './app/default/localeStrings',
     customStringsSrc: (name) => `./app/custom/${name}/localeStrings`,
-    stringsDest: './assets/override/i18n',
+    customStringsDest: './assets/override/i18n',
     customImagesSrc: (name) => `./app/custom/${name}/images`,
-    defaultImagesSrc: './app/default/images',
-    imagesDest: './assets/override/images',
+    customImagesDest: './assets/override/images',
+    releaseAssetsSrc: './assets/base/release',
+    releaseAssetsDest: './assets/override/release',
+    customSplashIosSrc: (name) => `./app/custom/${name}/nativeAssets/splash_screen/ios`,
+    customSplashIosDest: './assets/override/release/splash_screen/ios',
+    customSplashAndroidSrc: (name) => `./app/custom/${name}/nativeAssets/splash_screen/android`,
+    customSplashAndroidDest: './assets/override/release/splash_screen/android',
 };
 
 module.exports = {

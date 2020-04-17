@@ -16,16 +16,22 @@ exports.customColors = gulp.task('customColors', () => {
     return gulp.src(paths.customColorsSrc(customBuildName)).pipe(gulp.dest(paths.colorsDest, {overwrite: true}));
 });
 
-exports.customStrings = gulp.task('customStrings', () => {
+exports.customStrings = gulp.task('customStrings', (callback) => {
     const customBuildName = argv.custom;
-    const pathSrc = fs.existsSync(paths.customStringsSrc(customBuildName)) ? `${paths.customStringsSrc(customBuildName)}/*` : `${paths.defaultStringsSrc}/*`;
 
-    return gulp.src(pathSrc).pipe(gulp.dest(paths.stringsDest, {overwrite: true}));
+    if (fs.existsSync(paths.customStringsSrc(customBuildName))) {
+        return gulp.src(`${paths.customStringsSrc(customBuildName)}/*`).pipe(gulp.dest(paths.customStringsDest, {overwrite: true}));
+    }
+
+    return callback();
 });
 
-exports.customImages = gulp.task('customImages', () => {
+exports.customImages = gulp.task('customImages', (callback) => {
     const customBuildName = argv.custom;
-    const pathSrc = fs.existsSync(paths.customImagesSrc(customBuildName)) ? `${paths.customImagesSrc(customBuildName)}/*` : `${paths.defaultImagesSrc}/**/*`;
 
-    return gulp.src(pathSrc).pipe(gulp.dest(paths.imagesDest, {overwrite: true}));
+    if (fs.existsSync(paths.customImagesSrc(customBuildName))) {
+        return gulp.src(`${paths.customImagesSrc(customBuildName)}/*`).pipe(gulp.dest(paths.customImagesDest, {overwrite: true}));
+    }
+
+    return callback();
 });
