@@ -2,6 +2,8 @@
 // See LICENSE.txt for license information.
 
 const paths = {
+    customEnvFileSrc: (name) => `./app/custom/${name}/custom.env`,
+    customEnvFileDest: './fastlane',
     defaultColorsSrc: './app/default/constants/colorThemes.js',
     customColorsSrc: (name) => `./app/custom/${name}/constants/colorThemes.js`,
     colorsDest: './app/constants',

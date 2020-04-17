@@ -12,6 +12,7 @@ const customTasksToRun = [
     'overrideReleaseAssets',
     'customSplashIos',
     'customSplashAndroid',
+    'customAppEnvVariables',
 ];
 
 /*** Main series ***/
