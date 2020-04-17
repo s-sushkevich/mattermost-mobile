@@ -121,6 +121,9 @@ prepare-android-build:
 	@rm -rf ./node_modules/react-native-linear-gradient/Examples/
 	@rm -rf ./node_modules/react-native-orientation/demo/
 
+custom:
+	@npm run gulp:victra
+
 run: run-ios ## alias for run-ios
 
 run-ios: | check-device-ios pre-run ## Runs the app on an iOS simulator
